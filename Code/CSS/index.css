@@ -47,3 +47,29 @@
 .feature-img {
   height: 180px;
 }
+
+.product-img {
+  height: 15rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.product {
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.product-name {
+  font-size: 18px;
+}
+
+.price {
+  color: grey;
+  display: block;
+  margin: 10px 0;
+  font-size: 16px ;
+}
+
+.cart-btn {
+  margin: 20px 0 5px 0;
+}
