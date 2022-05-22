@@ -1,5 +1,5 @@
 SetCartItems()
-
+SetCartCount()
 
 function AddToCart(prodId) {
     var cart = JSON.parse(localStorage.getItem('cart')) // get cart data
@@ -45,6 +45,7 @@ function Plus(name) {
         inp++;
         input.value = inp;
     }
+    SetCartCount()
 }
 
 function Minus(name) {
@@ -60,11 +61,21 @@ function Minus(name) {
         product.price -= product.mrp
         localStorage.setItem('cart', JSON.stringify(cart))
     }
+    SetCartCount()
 }
 
 function SetCartItems() {
     var cart = JSON.parse(localStorage.getItem('cart'))
-    cart.forEach(x =>
+    cart.forEach(x => {
         document.getElementsByName(`qty_${x.prodId}`)[0].value = x.qty
-    );
+    });
+}
+
+function SetCartCount() {
+    var cart = JSON.parse(localStorage.getItem('cart'))
+    var cartCount = 0;
+    cart.forEach(x => {
+        cartCount += x.qty;
+        document.getElementById('cartCount').innerHTML = `(${cartCount})`
+    })
 }
