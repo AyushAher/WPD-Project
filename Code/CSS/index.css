@@ -106,3 +106,17 @@
 .minus:hover {
   background: papayawhip;
 }
+
+.footer {
+  padding: 30px;
+  background: lightslategrey;
+  color: antiquewhite;
+}
+
+.footer-email {
+  width: 75%;
+  display: inline-block;
+}
+.submit {
+  display: inline-block;
+}
