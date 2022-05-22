@@ -62,11 +62,6 @@ function Minus(name) {
     }
 }
 
-// qty should not be negative
-if (input.value < 0) {
-    input.value = 0;
-}
-
 function SetCartItems() {
     var cart = JSON.parse(localStorage.getItem('cart'))
     cart.forEach(x =>
