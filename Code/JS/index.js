@@ -1,5 +1,5 @@
-SetCartItems()
 SetCartCount()
+SetCartItems()
 
 function AddToCart(prodId) {
     var cart = JSON.parse(localStorage.getItem('cart')) // get cart data
@@ -34,6 +34,7 @@ function AddToCart(prodId) {
 
     localStorage.setItem('cart', JSON.stringify(cart)) // storing the array in localstorage
     SetCartItems()
+    SetCartCount()
 }
 
 function Plus(name) {
@@ -44,8 +45,9 @@ function Plus(name) {
         inp = parseInt(inp);
         inp++;
         input.value = inp;
+        AddToCart(name.substring(4))
+        SetCartCount()
     }
-    SetCartCount()
 }
 
 function Minus(name) {
@@ -60,8 +62,8 @@ function Minus(name) {
         product.qty = inp;
         product.price -= product.mrp
         localStorage.setItem('cart', JSON.stringify(cart))
+        SetCartCount()
     }
-    SetCartCount()
 }
 
 function SetCartItems() {
